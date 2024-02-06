@@ -1,6 +1,8 @@
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Iterator;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -22,12 +24,28 @@ public class MyFrame extends JFrame{
 		timeFormat = new SimpleDateFormat("hh:mm:ss a");
 		
 		timeLabel = new JLabel();
-		
-		time = timeFormat.format(Calendar.getInstance().getTime());
-		timeLabel.setText(time);
+		timeLabel.setFont(new Font("Helvetica", Font.PLAIN, 40));
 		
 		this.add(timeLabel);
 		this.setVisible(true);
+		
+		setTime();
 	}
 	
+	
+	public void setTime() {
+		
+		while(true) {
+			time = timeFormat.format(Calendar.getInstance().getTime());
+			timeLabel.setText(time);
+			
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+	}
 }
