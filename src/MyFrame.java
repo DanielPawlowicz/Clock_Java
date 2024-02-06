@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.text.SimpleDateFormat;
@@ -25,6 +26,9 @@ public class MyFrame extends JFrame{
 		
 		timeLabel = new JLabel();
 		timeLabel.setFont(new Font("Helvetica", Font.PLAIN, 40));
+		timeLabel.setForeground(new Color(0xaaaaaa));
+		timeLabel.setBackground(Color.black);
+		timeLabel.setOpaque(true);
 		
 		this.add(timeLabel);
 		this.setVisible(true);
